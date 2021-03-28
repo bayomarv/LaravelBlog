@@ -2,10 +2,10 @@
 
 @section('content')
     <section class="hero-img">
-        <div class="hero-text">
+        <div class="container hero-text">
             <h1>Welcome to my online forum!</h1>
             <p>Login to create blog posts</p>
-            <a class="btn btn-primary btn-lg" href="{{ route('login') }}">Login</a>
+            <a class="btn btn-primary btn-lg" href="{{ route('login') }}" style="font-size: 20px">Login</a>
         </div>
     </section>
     <section>
@@ -30,8 +30,8 @@
                 </div>
             </div>
         @endforeach
-        @endif
         <a class="btn btn-outline-dark mb-5" href="{{ route('posts') }}">See more</a>
+        @endif
         </div>
     </section>
     

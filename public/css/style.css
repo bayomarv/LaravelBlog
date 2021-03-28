@@ -42,10 +42,7 @@ h2, h3, h4, h5, h6 {
 	font-weight: 700;
 	font-style:"Montserrat";
 }
-footer{
-	box-shadow: 1px 1px 1px 1px solid black; !important;
-}
-a {
+a{
 	font-style:"Montserrat";
 }
 a .icons {

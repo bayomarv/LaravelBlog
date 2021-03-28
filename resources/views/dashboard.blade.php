@@ -5,7 +5,7 @@
     <div class="col-md-8">
         <p>{{ __('You are logged in!') }}</p>
         <div class="card">
-            <div class="card-header"><h2>Hello! {{ Auth::user()->name  }}</h2></div>
+            <div class="card-header"><h1>Hello! {{ Auth::user()->name  }}</h1></div>
             <div class="mx-3 my-3">
                 <a href="/posts/create" class="btn btn-primary">Create Post</a>
             </div>
@@ -18,7 +18,7 @@
 
                 
                 @if(count($posts) > 0)
-                    <h4 class="mx-3">Your Blog Posts</h4>
+                    <h4 class="mx-3">Your Posts</h4>
                     <table class="table table-striped" style="margin:0">
                         <tr>
                             <th><h5 class="text-muted">Title</h5></th>
@@ -27,7 +27,7 @@
                         </tr>
                         @foreach($posts as $post)
                             <tr>
-                                <td><a href="{{ route('posts.show', $post) }}"><h6>{{$post->title}}</h6></a></td>
+                                <td><a href="{{ route('posts.show', $post) }}"><h5>{{$post->title}}</h5></a></td>
                                 <td><a href="{{ route('posts.edit', $post) }}" class="btn btn-secondary">Edit</a></td>
                                 <td>
                                     <form action="{{ route('posts.destroy', $post) }}" method="POST" class="mb-4">

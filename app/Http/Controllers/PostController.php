@@ -53,13 +53,14 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        //validate create post form
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required',
             'cover_image' => 'image|nullable|max:1999'
         ]);
 
-        // Handle File Upload
+        // Handle image Upload
         if($request->hasFile('cover_image')){
             // Get filename with the extension
             $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
@@ -72,14 +73,8 @@ class PostController extends Controller
             // Upload Image
             $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
         
-        /* make thumbnails
-        $thumbStore = 'thumb.'.$filename.'_'.time().'.'.$extension;
-            $thumb = Image::make($request->file('cover_image')->getRealPath());
-            $thumb->resize(80, 80);
-            $thumb->save('storage/cover_images/'.$thumbStore);
-        */
-        
         } else {
+            //save as image name is image isn't uploaded 
             $fileNameToStore = 'noimage.jpg';
         }
 
@@ -138,6 +133,7 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //validate edtit form
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required'
@@ -158,14 +154,9 @@ class PostController extends Controller
             // Upload Image
             $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
             // Delete file if exists
+             if($post->cover_image != 'noimage.jpg'){
             Storage::delete('public/cover_images/'.$post->cover_image);
-        
-       //Make thumbnails
-        $thumbStore = 'thumb.'.$filename.'_'.time().'.'.$extension;
-            $thumb = Image::make($request->file('cover_image')->getRealPath());
-            $thumb->resize(80, 80);
-            $thumb->save('storage/cover_images/'.$thumbStore);
-        
+            }       
         }
 
         // Update Post

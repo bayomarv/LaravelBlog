@@ -25,7 +25,5 @@
 	<div class="container col-md-8">
 		{{$posts->links()}}
 	</div>
-
-	@endif
-	
+	@endif	
 @endsection
