@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="hero-img">
+    <section class="hero">
         <div class="container hero-text">
-            <h1>Welcome to my online forum!</h1>
-            <p>Login to create blog posts</p>
-            <a class="btn btn-primary btn-lg" href="{{ route('login') }}" style="font-size: 20px">Login</a>
+            <h1 class="mb-5">Welcome to my online forum!</h1>
+            
+            <a class="btn btn-primary btn-lg" href="{{ route('dashboard') }}" style="font-size: 20px;font-weigh:400">Create Post</a>
         </div>
     </section>
     <section>
@@ -30,7 +30,7 @@
                 </div>
             </div>
         @endforeach
-        <a class="btn btn-outline-dark mb-5" href="{{ route('posts') }}">See more</a>
+        <a class="btn btn-success mb-5" href="{{ route('posts') }}">See more</a>
         @endif
         </div>
     </section>

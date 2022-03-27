@@ -1,15 +1,16 @@
 .navbar-brand {
   color: #212529;
   font-family: "Brush Script MT", cursive;
+  font-size: 24px;
   font-weight: 700;
   letter-spacing: 0.0625em;
   text-transform: uppercase;
 }
-.hero-img {
+.hero {
 	background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url("/storage/images/background.jpg");
 	height:75vh;
 	background-position: center;
-	background-reprat: no-repeat;
+	background-repeat: no-repeat;
 	background-size: cover;
 	position:relative;
 }
@@ -26,14 +27,7 @@
 	font-weight:600;
 	font-style: "Poppins", sans-serif;
 }
-.hero-text p {
-	font-size:18px;
-	font-weight:500;
-	text-shadow: 1px 1px 1px solid black;
-	color:fefefe;
-	letter-spacing: .25em;
-	text-transform: uppercase;
-}
+
 * {
 	font-style: "Poppins", sans-serif;
 }
@@ -41,6 +35,9 @@
 h2, h3, h4, h5, h6 {
 	font-weight: 700;
 	font-style:"Montserrat";
+}
+#post p, #post li{
+	font-size: 16px;
 }
 a{
 	font-style:"Montserrat";

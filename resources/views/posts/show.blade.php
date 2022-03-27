@@ -8,7 +8,7 @@
 		    <p class="text-muted">Written {{ $post->created_at->diffForHumans() }} by <span class="text-dark text-uppercase">{{$post->user->name}}</span></p>
 		    <img style="width:100%" src="/storage/cover_images/{{$post->cover_image}}">
 		    <br><br>
-		    <div>
+		    <div id="post">
 		        {!!$post->body!!}
 		    </div>
 		</div>
